@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.FXMLDocumentController">
+   <bottom>
+      <StackPane focusTraversable="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <HBox fx:id="controlPane" stylesheets="@style.css">
+               <children>
+                  <HBox spacing="30.0">
+                     <children>
+                        <Button fx:id="prevBtn" mnemonicParsing="false" onAction="#prevAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: none;">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="playPauseBtn" mnemonicParsing="false" onAction="#playPauseButtonAction" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: none;" />
+                        <Button fx:id="nextBtn" mnemonicParsing="false" onAction="#nextAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: none;">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="stopBtn" mnemonicParsing="false" onAction="#stopButtonAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: none;">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="expBtn" mnemonicParsing="false" onAction="#fileExplorerAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: none;">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Slider fx:id="volumeSlider">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Slider>
+                     </children>
+                  </HBox>
+                  <Region prefHeight="45.0" HBox.hgrow="ALWAYS" />
+                  <HBox>
+                     <children>
+                        <Button fx:id="expandBtn" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#maximizedAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: none;" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </StackPane>
+   </bottom>
+   <top>
+      <HBox prefHeight="24.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="600.0" scaleShape="false" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></MediaView>
+            <Slider fx:id="seeker" stylesheets="@style.css" StackPane.alignment="BOTTOM_CENTER">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Slider>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </StackPane>
+   </center>
+</BorderPane>
